@@ -7,9 +7,10 @@
 <body>
 	<h1 th:text="${title}"></h1>
 		<form method="get" action="#" th:action="@{/confirm}">
-			<p>名前 : <input type="text" name="name1"></p>
-			<p>年齢 : <input type="text" name="age"></p>
-			<input type="submit" value="送信">
+			<p>日付 : <input type="text" name="date"></p>
+			<p>内容 : <input type="text" name="naiyou"></p>
+			<p>金額 : <input type="text" name="yen"></p>
+			<input type="submit" value="入力内容の確認">
 		</form>
 </body>
 </html>

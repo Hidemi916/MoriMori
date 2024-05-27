@@ -9,14 +9,18 @@
 	<h1 th:text="${title}"></h1>
 	<table>
 		<tr>
-			<th>id</th>
-			<th>名前</th>
+			<th>No.</th>
+			<th>日付</th>
+			<th>内容</th>
+			<th>金額</th>
 			<th></th>
 			<th></th>
 		</tr>
 		<tr th:each="res : ${dbList}">
 			<td th:text="${res.id}">1</td>
-			<td th:text="${res.name}">名前</td>
+			<td th:text="${res.date}">日付</td>
+			<td th:text="${res.naiyou}">内容</td>
+			<td th:text="${res.yen}">金額</td>
 			<td>
 				<form th:action="@{/edit/{id}(id=${res.id})}">
 					<input type="submit" value="編集">
@@ -30,7 +34,7 @@
 		</tr>
 	</table>
 	<p>
-		<a href="/form" th:href="@{/form}">フォーム入力画面へ</a>
+		<a href="/form" th:href="@{/form}">新規作成へ</a>
 	</p>
 </body>
 </html>
