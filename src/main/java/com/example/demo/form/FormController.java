@@ -19,7 +19,7 @@ public class FormController {
 
 	@RequestMapping("/sample")
 	public String top(Model model) {
-		model.addAttribute("title","こんにちわ");
+		model.addAttribute("title"," ");
 			return "index";
 		}
 	
@@ -31,18 +31,18 @@ public class FormController {
 	
 	@RequestMapping("/form")
 	public String form(Model model) {
-		model.addAttribute("title","サンプルフォーム");
+		model.addAttribute("title","新規作成ページ");
 		return "form/input";
 	}
 	
 	@RequestMapping("/confirm")
 	public String confirm(@Validated Form form, BindingResult result, Model model) {
 		if(result.hasErrors()) {
-			model.addAttribute("title","入力ページ");
+			model.addAttribute("title","訂正ページ");
 			return "form/input";
 			}
 
-		model.addAttribute("title","入力ページ");
+		model.addAttribute("title","確認ページ");
 		return "form/confirm";
 	}
 	
@@ -58,8 +58,9 @@ public class FormController {
 		@RequestMapping ("/complete")
 		public String complete(Form form, Model model){
 			EntForm entform = new EntForm();
-			entform.setName(form.getName1());
-			entform.setAge(form.getAge());
+			entform.setDate(form.getDate());
+			entform.setNaiyou(form.getNaiyou());
+			entform.setYen(form.getYen());
 			sampledao.insertDb(entform);
 			return "form/complete";
 		}
@@ -69,7 +70,7 @@ public class FormController {
 	public String view(Model model) {
 		List<EntForm> list = sampledao.searchDb();
 		model.addAttribute("dbList",list);
-		model.addAttribute("title","一覧ページ");
+		model.addAttribute("title","家計簿の一覧ページ");
 		return "form/view";
 	}
 	
@@ -92,7 +93,7 @@ public class FormController {
 
 			//スタンバイしているViewに向かって、データを投げる
 			model.addAttribute("form", entformdb);
-			model.addAttribute("title", "編集ページ");
+			model.addAttribute("title", "新規作成ページ");
 			return "form/edit";
 		}
 		
@@ -101,8 +102,8 @@ public class FormController {
 		public String editExe(@PathVariable Long id, Model model, Form form) {
 			//フォームの値をエンティティに入れ直し
 			EntForm entform = new EntForm();
-			System.out.println(form.getName1());//取得できているかの確認
-			entform.setName(form.getName1());
+			System.out.println(form.getDate());//取得できているかの確認
+			entform.setDate(form.getDate());
 			//更新の実行
 			sampledao.updateDb(id,entform);
 			//一覧画面へリダイレクト
