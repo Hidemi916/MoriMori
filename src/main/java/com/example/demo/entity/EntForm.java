@@ -20,7 +20,7 @@ public class EntForm {
 		return date;
 	}
 
-	public void setName(String date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	
