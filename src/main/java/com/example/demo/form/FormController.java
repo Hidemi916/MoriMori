@@ -62,7 +62,7 @@ public class FormController {
 			entform.setNaiyou(form.getNaiyou());
 			entform.setYen(form.getYen());
 			sampledao.insertDb(entform);
-			return "form/complete";
+			return "redirect:/view";
 		}
 
 //全件検索(SELECT)
@@ -93,7 +93,7 @@ public class FormController {
 
 			//スタンバイしているViewに向かって、データを投げる
 			model.addAttribute("form", entformdb);
-			model.addAttribute("title", "新規作成ページ");
+			model.addAttribute("title", "編集ページ");
 			return "form/edit";
 		}
 		

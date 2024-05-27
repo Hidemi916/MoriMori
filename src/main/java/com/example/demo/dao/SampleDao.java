@@ -88,15 +88,13 @@ public List<EntForm> searchDb(){
 			//Controllerに渡す
 			return resultDb2;
 		}
-		
+	
 		//更新の実行(UPDATE)
 		public void updateDb(Long id, EntForm entform) {
 			//コンソールに表示
 			System.out.println("編集の実行");
 			//UPDATEを実行
-			db.update("UPDATE sample SET name = ? WHERE id = ?",entform.getDate(), id);
-			db.update("UPDATE sample SET name = ? WHERE id = ?",entform.getNaiyou(), id);
-			db.update("UPDATE sample SET name = ? WHERE id = ?",entform.getYen(), id);
+			db.update("UPDATE sample SET date = ?, naiyou=?, yen=? WHERE id = ?",entform.getDate(),entform.getNaiyou(),entform.getYen(),id);
 		}
 		
 	}
