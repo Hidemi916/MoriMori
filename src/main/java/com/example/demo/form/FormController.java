@@ -53,7 +53,7 @@ public class FormController {
 		public FormController(SampleDao sampledao) {
 			this.sampledao = sampledao;
 		}
-		///渡辺翔太
+		
 		//完了の処理
 		@RequestMapping ("/complete")
 		public String complete(Form form, Model model){
