@@ -10,11 +10,17 @@
 	<div th:object="${form}">
 		<form action="#" method="get" th:action="@{/edit/__*{id}__/exe}">
 			<p>
-				番号:<span th:text="*{id}"></span> <input type="hidden" name="id"
+				番号: <span th:text="*{id}"></span> <input type="hidden" name="id"
 					th:value="*{id}">
 			</p>
 			<p>
-				名前: <input type="text" name="name1" th:value="*{name}">
+				日付: <input type="date" name="date" th:value="*{date}">
+			</p>
+			<p>
+				内容: <input type="text" name="naiyou" th:value="*{naiyou}">
+			</p>
+			<p>
+				金額: <input type="text" name="yen" th:value="*{yen}">
 			</p>
 			<input type="submit" value="更新">
 		</form>

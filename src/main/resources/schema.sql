@@ -1,7 +1,7 @@
 CREATE TABLE sample(
 	id INT NOT NULL AUTO_INCREMENT,
 	date VARCHAR(100) NOT NULL,
-	naiyou VARCHAR(100) NOT NULL,
+	naiyou VARCHAR(100) NULL,
 	yen Integer NOT NULL,
 	PRIMARY KEY(id)
 );
