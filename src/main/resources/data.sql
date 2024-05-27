@@ -1,1 +1,1 @@
-INSERT INTO sample (date, naiyou, yen) VALUES ('date', 'naiyou', 0);
+INSERT INTO sample (date, naiyou, yen) VALUES ('2024-05-27', 'naiyou', 0);
