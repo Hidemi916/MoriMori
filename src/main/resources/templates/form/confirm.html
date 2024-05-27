@@ -8,22 +8,25 @@
 	<h1><span th:text="${title}"></span></h1>
 	
 	<div th:object="${form}">
-		<p>入力内容ここから</p>
-		<p th:text="*{name1}"></p>
-		<p th:text="*{age}"></p>
-		<p>入力内容ここまで</p>
+		<p>この内容で登録します。</p>
+		<p>よろしいですか？</p>
+		<p th:text="*{date}"></p>
+		<p th:text="*{naiyou}"></p>
+		<p th:text="*{yen}"></p>
+
 		
 		<form method="get" action="#" th:action="@{/form}">
-			<input type="hidden" name="name1" th:value="*{name1}">
-			<input type="hidden" name="age" th:value="*{age}">
-			<input type="submit" value="入力画面へ">
+			<input type="hidden" name="date" th:value="*{date}">
+			<input type="hidden" name="naiyou" th:value="*{naiyou}">]
+			<input type="hidden" name="yen" th:value="*{yen}">
+			<input type="submit" value="戻る">
 		</form>
 		
 		<form method="get" action="#" th:action="@{/view}">
-			<input type="hidden" name="name1" th:value="*{name1}">
-			<input type="hidden" name="age" th:value="*{age}">
-			<input type="submit" value="完了画面へ">
-			
+			<input type="hidden" name="date" th:value="*{date}">
+			<input type="hidden" name="naiyou" th:value="*{naiyou}">]
+			<input type="hidden" name="yen" th:value="*{yen}">
+			<input type="submit" value="登録">		
 		</form>
 	</div>
 </body>
