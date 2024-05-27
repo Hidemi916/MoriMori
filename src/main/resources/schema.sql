@@ -1,6 +1,7 @@
 CREATE TABLE sample(
 	id INT NOT NULL AUTO_INCREMENT,
-	name VARCHAR(100) NOT NULL,
-	age Integer NOT NULL,
+	date VARCHAR(100) NOT NULL,
+	naiyou VARCHAR(100) NOT NULL,
+	yen Integer NOT NULL,
 	PRIMARY KEY(id)
 );

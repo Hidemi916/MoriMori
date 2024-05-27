@@ -21,7 +21,7 @@ public class SampleDao {
 	}
 
 	public void insertDb(EntForm entform) {
-		db.update("INSERT INTO sample (name, age) VALUES(?, ?)", entform.getName(),entform.getAge());
+		db.update("INSERT INTO sample (date, naiyou, yen) VALUES(?, ?, ?)", entform.getDate(),entform.getNaiyou(), entform.getYen());
 	}
 
 //検索処理
@@ -42,7 +42,9 @@ public List<EntForm> searchDb(){
 
 		//id、nameのデータをentformdbに移す
 		entformdb.setId((int)result1.get("id"));
-		entformdb.setName((String)result1.get("name"));
+		entformdb.setDate((String)result1.get("date"));
+		entformdb.setNaiyou((String)result1.get("naiyou"));
+		entformdb.setYen((int)result1.get("yen"));
 
 		//移し替えたデータを持ったentformdbを、resultDB2に入れる
 		resultDb2.add(entformdb);
@@ -76,7 +78,9 @@ public List<EntForm> searchDb(){
 				EntForm entformdb = new EntForm();
 				//id、nameのデータをentformdbに移す
 				entformdb.setId((int)result1.get("id"));
-				entformdb.setName((String)result1.get("name"));
+				entformdb.setDate((String)result1.get("date"));
+				entformdb.setNaiyou((String)result1.get("naiyou"));
+				entformdb.setYen((int)result1.get("yen"));
 				//移し替えたデータを持ったentformdbを、resultDB2に入れる
 				resultDb2.add(entformdb);
 			}
@@ -90,7 +94,9 @@ public List<EntForm> searchDb(){
 			//コンソールに表示
 			System.out.println("編集の実行");
 			//UPDATEを実行
-			db.update("UPDATE sample SET name = ? WHERE id = ?",entform.getName(), id);
+			db.update("UPDATE sample SET name = ? WHERE id = ?",entform.getDate(), id);
+			db.update("UPDATE sample SET name = ? WHERE id = ?",entform.getNaiyou(), id);
+			db.update("UPDATE sample SET name = ? WHERE id = ?",entform.getYen(), id);
 		}
 		
 	}
