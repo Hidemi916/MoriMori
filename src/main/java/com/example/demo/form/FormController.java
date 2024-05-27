@@ -102,7 +102,7 @@ public class FormController {
 		public String editExe(@PathVariable Long id, Model model, Form form) {
 			//フォームの値をエンティティに入れ直し
 			EntForm entform = new EntForm();
-			System.out.println(form.getDate());//取得できているかの確認
+			System.out.println(form.getDate());//取得できているかの確認1
 			entform.setDate(form.getDate());
 			//更新の実行
 			sampledao.updateDb(id,entform);
