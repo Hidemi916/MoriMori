@@ -104,6 +104,8 @@ public class FormController {
 			EntForm entform = new EntForm();
 			System.out.println(form.getDate());//取得できているかの確認1
 			entform.setDate(form.getDate());
+			entform.setNaiyou(form.getNaiyou());
+			entform.setYen(form.getYen());
 			//更新の実行
 			sampledao.updateDb(id,entform);
 			//一覧画面へリダイレクト
