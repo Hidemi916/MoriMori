@@ -2,8 +2,9 @@ package com.example.demo.entity;
 
 public class EntForm {
 	private int id;
-	private String name;
-	private int age;
+	private String date;
+	private String naiyou;
+	private int yen;
 
 	public EntForm() {}
 
@@ -15,19 +16,27 @@ public class EntForm {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getDate() {
+		return date;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String date) {
+		this.date = date;
 	}
 	
-	public int getAge() {
-		return age;
+	public String getNaiyou() {
+		return naiyou;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setNaiyou(String naiyou) {
+		this.naiyou = naiyou;
+	}
+	
+	public int getYen() {
+		return yen;
+	}
+
+	public void setYen(int yen) {
+		this.yen = yen;
 	}
 }
