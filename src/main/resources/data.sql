@@ -1,1 +1,1 @@
-INSERT INTO sample (name, age) VALUES ('taro', 0);
+INSERT INTO sample (date, naiyou, yen) VALUES ('date', 'naiyou', 0);

@@ -20,7 +20,7 @@ public class Form {
 	public String getNaiyou() {
 		return naiyou;
 	}	
-	public void setAge(String naiyou) {
+	public void setNaiyou(String naiyou) {
 		this.naiyou = naiyou;
 	}
 	
