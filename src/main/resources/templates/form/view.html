@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Hello</title>
-<meta charset="utf-8" />
-<link rel="stylesheet" th:href="@{/style.css}">
+	<title>家計簿の一覧ページ</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" th:href="@{/view.css}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 	<h1 th:text="${title}"></h1>
 	<table>
@@ -17,7 +21,7 @@
 			<th></th>
 		</tr>
 		<tr th:each="res : ${dbList}">
-			<td th:text="${res.id}">1</td>
+			<td class="no" th:text="${res.id}">1</td>
 			<td th:text="${res.date}">日付</td>
 			<td th:text="${res.naiyou}">内容</td>
 			<td th:text="${res.yen}">金額</td>
@@ -34,7 +38,7 @@
 		</tr>
 	</table>
 	<p>
-		<a href="/form" th:href="@{/form}">新規作成へ</a>
+		<button class="new"><a href="/form" th:href="@{/form}">新規作成へ</a></button>
 	</p>
 </body>
 </html>
