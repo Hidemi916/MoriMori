@@ -4,22 +4,31 @@ import jakarta.validation.constraints.Size;
 
 public class Form {
 	@Size(min = 1, max = 10, message = "1～10文字以内にしてください")
-	private String name1;
-	private int age;
+	private String date;
+	private String naiyou;
+	private int yen;
 	
 	public Form() {}
 
-	public String getName1() {
-		return name1;
+	public String getDate() {
+		return date;
 	}	
-	public void setName1(String name1) {
-		this.name1 = name1;
+	public void setDate(String date) {
+		this.date = date;
 	}
 	
-	public int getAge() {
-		return age;
+	public String getNaiyou() {
+		return naiyou;
 	}	
-	public void setAge(int age) {
-		this.age = age;
+	public void setAge(String naiyou) {
+		this.naiyou = naiyou;
+	}
+	
+	public int getYen() {
+		return yen;
+	}
+
+	public void setYen(int yen) {
+		this.yen = yen;
 	}
 }
