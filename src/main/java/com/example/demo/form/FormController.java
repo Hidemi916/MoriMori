@@ -39,6 +39,7 @@ public class FormController {
 	public String confirm(@Validated Form form, BindingResult result, Model model) {
 		if(result.hasErrors()) {
 			model.addAttribute("title","訂正ページ");
+			model.addAttribute("errortitle","正しく入力してください");
 			return "form/input";
 			}
 
