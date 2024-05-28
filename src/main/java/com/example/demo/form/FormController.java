@@ -17,7 +17,7 @@ import com.example.demo.entity.EntForm;
 @Controller
 public class FormController {
 
-	@RequestMapping("/sample")
+	@RequestMapping("/kakeibo")
 	public String top(Model model) {
 		model.addAttribute("title"," ");
 			return "index";
