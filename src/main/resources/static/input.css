@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-
-
 /*.zen-maru-gothic-medium {*/
 /*  font-family: "Zen Maru Gothic", serif;*/
 /*  font-weight: 500;*/
@@ -14,7 +12,11 @@
 /*  font-style: normal;*/
 /*}*/
 
-
+/*.zen-maru-gothic-regular {*/
+/*  font-family: "Zen Maru Gothic", serif;*/
+/*  font-weight: 400;*/
+/*  font-style: normal;*/
+/*}*/
 
 body {
 	height: 500px;
@@ -31,18 +33,6 @@ h1 {
 	font-size: 50px;
 	padding-top: 50px;
 }
-
-
-/*.button {*/
-/*	border-radius: 30px;*/
-/*	font-size: 20px;*/
-/*	text-align: center;*/
-/*	padding: 15px 45px;*/
-/*	background-color: #4CAF50;*/
-/*	color: #000;*/
-/*	border: none;*/
-/*}*/
-
 
 p {
 	font-family: "Zen Maru Gothic", serif;
@@ -72,8 +62,3 @@ input {
 	background-color: #f9876f;
 	transform: scale(1.1,1.1);
 }
-
-
-
-
-

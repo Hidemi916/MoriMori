@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-
-
 /*.zen-maru-gothic-medium {*/
 /*  font-family: "Zen Maru Gothic", serif;*/
 /*  font-weight: 500;*/
@@ -14,13 +12,18 @@
 /*  font-style: normal;*/
 /*}*/
 
+/*.zen-maru-gothic-regular {*/
+/*  font-family: "Zen Maru Gothic", serif;*/
+/*  font-weight: 400;*/
+/*  font-style: normal;*/
+/*}*/
 
 
 body {
 	height: 960px;
 	width: auto;
 	text-align: center;
-	margin: 100px auto;
+	margin: 50px auto;
 	background-color: rgb(247, 244, 172);
 	}
 	
@@ -29,40 +32,68 @@ h1 {
 	font-weight: 700;
 	font-style: normal;
 	font-size: 50px;
-	padding-top: 50px;
-}
-table {
-	margin: 0 auto;
 }
 
-td {
+table {
+	margin: 0 auto;
+	color: #000;
+	font-family: "Zen Maru Gothic", serif;
+	font-weight: 500;
+}
+
+#hyou {
 	border-right: 1px solid #000;
 	border-bottom: 1px solid #000;
 	border-top: 1px solid #000;
 	padding: 10px 30px;
 }
 
+input {
+	background-color: #4CAF50;
+	padding: 8px 30px;
+	text-align: center;
+	display: inline-block;
+	margin: 10px 10px;
+	border : none;
+	border-radius: 30px;
+	font-size: 18px;
+  	color: #000;
+	font-family: "Zen Maru Gothic", serif;
+	font-weight: 500;
+}
+
+input:hover {
+	background-color: #f9876f;
+}
+
 .no {
 	border-left: 1px solid #000;
 }
 
+p {
+	color: #000;
+	font-family: "Zen Maru Gothic", serif;
+	font-weight: 500;
+	font-size: 30px;
+	font-weight: bold;
+	letter-spacing: 1.5px;
+}
+
 a {
 	text-decoration: none;
-	margin : 100px;
 	font-size: 20px;
 	color: #000;
 	font-family: "Zen Maru Gothic", serif;
 	font-weight: 500;
 }
-
 button {
 	background-color: #4CAF50;
-	padding: 10px 0px;
+	padding: 10px 45px;
 	text-align: center;
 	display: inline-block;
-	margin: 30px 10px;
 	border : none;
-	border-radius: 50px;
+	border-radius: 30px;
+	font-size: 18px;
 	transition: .2s;
 }
 
