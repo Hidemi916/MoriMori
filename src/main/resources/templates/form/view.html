@@ -38,13 +38,13 @@
         </tr>
 		<tr>
 			<td>
-			<p id="total"><!-- 合計金額を表示するための場所 --></p>
+			<p id="total"><!-- 合計金額を表示するための場所 --><p>
 			</td>
 		</tr>
     </table>
+	<p>
         <button class="new"><a href="/form" th:href="@{/form}">新規作成へ</a></button>
-    </p>
-
+	</p>
     <script th:inline="javascript">
         // JavaScriptで合計金額を計算する
         var total = 0;
