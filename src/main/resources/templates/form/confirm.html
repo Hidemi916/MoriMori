@@ -15,9 +15,9 @@
 	<div th:object="${form}">
 		<p>この内容で登録します。
 		<br>よろしいですか？</p>
-		<p th:text="*{date}"></p>
-		<p th:text="*{naiyou}"></p>
-		<p th:text="*{yen}"></p>
+		<p th:text="'日付：' + *{date}"></p>
+		<p th:text="'メモ：' + *{naiyou}"></p>
+		<p th:text="'支出金額：' +*{yen}">円</p>
 
 		<div class="form">
 		<form method="get" action="#" th:action="@{/form}">
