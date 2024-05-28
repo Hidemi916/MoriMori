@@ -22,16 +22,38 @@ body {
 	height: 500px;
 	width: auto;
 	text-align: center;
-	margin: 100px auto;
+	margin: 50px auto;
 	background-color: rgb(247, 244, 172);
 	}
+	
+header {
+	text-align: left;
+	margin-left: 10%;
+}
+
+#top {
+	background-color: rgb(128, 255, 255);
+	color: #000;
+	font-family: "Zen Maru Gothic", serif;
+	font-weight: 500;
+}
+
+button {
+	background-color: #4CAF50;
+	padding: 10px 45px;
+	text-align: center;
+	display: inline-block;
+	border : none;
+	border-radius: 30px;
+	font-size: 18px;
+	transition: .2s;
+}
 	
 h1 {
 	font-family: "Zen Maru Gothic", serif;
 	font-weight: 700;
 	font-style: normal;
 	font-size: 50px;
-	padding-top: 50px;
 }
 
 p {
