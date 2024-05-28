@@ -30,11 +30,11 @@
                     <input type="submit" value="編集">
                 </form>
             </td>
-            <td>
-                <form th:action="@{/del/{id}(id=${res.id})}">
-                    <input type="submit" value="削除" />
-                </form>
-            </td>
+			<td>
+			    <form id="deleteForm" th:action="@{/del/{id}(id=${res.id})}" method="post">
+			        <input type="submit" value="削除" onclick="return confirm('本当に削除しますか？')" />
+			    </form>
+			</td>
         </tr>
 		<tr>
 			<td>
