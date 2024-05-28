@@ -17,7 +17,7 @@ import com.example.demo.entity.EntForm;
 @Controller
 public class FormController {
 
-	@RequestMapping("/sample")
+	@RequestMapping("/kakeibo")
 	public String top(Model model) {
 		model.addAttribute("title"," ");
 			return "index";
@@ -85,7 +85,7 @@ public class FormController {
 		//更新画面の表示(SELECT)の
 		@RequestMapping("/edit/{id}")
 		public String editView(@PathVariable Long id, Model model) {
-
+			
 			//DBからデータを1件取ってくる(リストの形)
 			List<EntForm> list = sampledao.selectOne(id);
 
@@ -98,6 +98,22 @@ public class FormController {
 			return "form/edit";
 		}
 		
+		//バックアップ
+//		@RequestMapping("/edit/{id}")
+//		public String editView(@PathVariable Long id, Model model) {
+//
+//			//DBからデータを1件取ってくる(リストの形)
+//			List<EntForm> list = sampledao.selectOne(id);
+//
+//			//リストから、オブジェクトだけをピックアップ
+//			EntForm entformdb = list.get(0);
+//
+//			//スタンバイしているViewに向かって、データを投げる
+//			model.addAttribute("form", entformdb);
+//			model.addAttribute("title", "編集ページ");
+//			return "form/edit";
+//		}
+		
 		//更新処理(UPDATE)
 		@RequestMapping("/edit/{id}/exe")
 		public String editExe(@PathVariable Long id, Model model, Form form, BindingResult result) {
@@ -109,11 +125,11 @@ public class FormController {
 		    entform.setYen(form.getYen());
 		    
 //		    // バリデーションエラーがあるかチェック
-//		    if (result.hasErrors()) {
-//		        model.addAttribute("title", "訂正ページ");
-//		        model.addAttribute("errortitle", "正しく入力してください");
-//		        return "form/edit"; // エラーがあれば編集画面に戻る
-//		    }
+		    if (result.hasErrors()) {
+		        model.addAttribute("title", "訂正ページ");
+		        model.addAttribute("errortitle", "正しく入力してください");
+		        return "form/edit"; // エラーがあれば編集画面に戻る
+		    }
 		    
 		    //更新の実行
 		    sampledao.updateDb(id, entform);
