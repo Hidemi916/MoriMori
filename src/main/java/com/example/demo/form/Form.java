@@ -7,8 +7,16 @@ public class Form {
 	private String date;
 	private String naiyou;
 	private int yen;
+	private Long id;
 	
 	public Form() {}
+	
+	public Long getId() {
+		return id;
+	}	
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getDate() {
 		return date;

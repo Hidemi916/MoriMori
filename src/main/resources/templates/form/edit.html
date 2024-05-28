@@ -11,6 +11,7 @@
 
 <body>
 	<h1 th:text="${title}"></h1>
+	<p th:text="${errortitle}"></p>
 	<div th:object="${form}">
 		
 		<form action="#" method="get" th:action="@{/edit/__*{id}__/exe}">
