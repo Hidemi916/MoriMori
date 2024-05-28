@@ -100,16 +100,26 @@ public class FormController {
 		
 		//更新処理(UPDATE)
 		@RequestMapping("/edit/{id}/exe")
-		public String editExe(@PathVariable Long id, Model model, Form form) {
-			//フォームの値をエンティティに入れ直し
-			EntForm entform = new EntForm();
-			System.out.println(form.getDate());//取得できているかの確認1
-			entform.setDate(form.getDate());
-			entform.setNaiyou(form.getNaiyou());
-			entform.setYen(form.getYen());
-			//更新の実行
-			sampledao.updateDb(id,entform);
-			//一覧画面へリダイレクト
-			return "redirect:/view";
+		public String editExe(@PathVariable Long id, Model model, Form form, BindingResult result) {
+		    //フォームの値をエンティティに入れ直し
+		    EntForm entform = new EntForm();
+		    System.out.println(form.getDate());//取得できているかの確認1
+		    entform.setDate(form.getDate());
+		    entform.setNaiyou(form.getNaiyou());
+		    entform.setYen(form.getYen());
+		    
+//		    // バリデーションエラーがあるかチェック
+//		    if (result.hasErrors()) {
+//		        model.addAttribute("title", "訂正ページ");
+//		        model.addAttribute("errortitle", "正しく入力してください");
+//		        return "form/edit"; // エラーがあれば編集画面に戻る
+//		    }
+		    
+		    //更新の実行
+		    sampledao.updateDb(id, entform);
+		    
+		    //一覧画面へリダイレクト
+		    return "redirect:/view";
 		}
+
 }
