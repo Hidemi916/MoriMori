@@ -20,8 +20,8 @@
 			<th></th>
 			<th></th>
 		</tr>
-		<tr th:each="res : ${dbList}">
-			<td class="no" th:text="${res.id}">1</td>
+		<tr th:each="res, i : ${dbList}">
+			<td class="no" th:text="${i.index + 1}">1</td>
 			<td th:text="${res.date}">日付</td>
 			<td th:text="${res.naiyou}">内容</td>
 			<td th:text="${res.yen}">金額</td>
