@@ -17,7 +17,7 @@
 
 
 body {
-	height: 960px;
+	height: 500px;
 	width: auto;
 	text-align: center;
 	margin: 100px auto;
@@ -68,7 +68,7 @@ input {
 	margin: 30px 10px;
 	border : none;
 	border-radius: 30px;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .button:hover {
