@@ -9,6 +9,10 @@
 	<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
+<header>
+	<button id="top">TOP</button>
+</header>
+
 <body>
     <h1 th:text="${title}"></h1>
    
@@ -16,16 +20,16 @@
         <tr>
             <th>No.</th>
             <th>日付</th>
-            <th>内容</th>
-            <th>金額</th>
+            <th>メモ</th>
+            <th>支出金額</th>
             <th></th>
             <th></th>
         </tr>
         <tr th:each="res, i : ${dbList}">
             <td id="hyou" class="no" th:text="${i.index + 1}">1</td>
             <td id="hyou" th:text="${res.date}">日付</td>
-            <td id="hyou" th:text="${res.naiyou}">内容</td>
-            <td id="hyou" class="yen" th:text="${res.yen}">金額</td>
+            <td id="hyou" th:text="${res.naiyou}">メモ</td>
+            <td id="hyou" class="yen" th:text="${res.yen}">支出金額</td>
             <td>
                 <form th:action="@{/edit/{id}(id=${res.id})}">
                     <input type="submit" value="編集">

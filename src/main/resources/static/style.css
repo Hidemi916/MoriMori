@@ -25,7 +25,12 @@ body {
 	text-align: center;
 	margin: 100px auto;
 	background-color: rgb(247, 244, 172);
+	position: relative;
 	}
+	
+#top {
+	position: absolute;
+}
 
 h1 {
 	font-family: "Zen Maru Gothic", serif;

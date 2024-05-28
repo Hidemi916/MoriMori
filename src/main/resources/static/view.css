@@ -26,6 +26,18 @@ body {
 	margin: 50px auto;
 	background-color: rgb(247, 244, 172);
 	}
+
+header {
+	text-align: left;
+	margin-left: 10%;
+}
+
+#top {
+	background-color: rgb(128, 255, 255);
+	color: #000;
+	font-family: "Zen Maru Gothic", serif;
+	font-weight: 500;
+}
 	
 h1 {
 	font-family: "Zen Maru Gothic", serif;
