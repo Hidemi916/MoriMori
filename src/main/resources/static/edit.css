@@ -33,17 +33,6 @@ h1 {
 }
 
 
-/*.button {*/
-/*	border-radius: 30px;*/
-/*	font-size: 20px;*/
-/*	text-align: center;*/
-/*	padding: 15px 45px;*/
-/*	background-color: #4CAF50;*/
-/*	color: #000;*/
-/*	border: none;*/
-/*}*/
-
-
 p {
 	font-family: "Zen Maru Gothic", serif;
 	font-weight: 500;
@@ -70,8 +59,12 @@ input {
 
 .button:hover {
 	background-color: #f9876f;
-	transform: scale(1.2,1.2);
 }
+
+
+
+
+
 
 
 

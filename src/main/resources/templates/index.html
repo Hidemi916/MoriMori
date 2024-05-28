@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-	<head>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" th:href="@{/style.css}">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
-	</head>
+<head>
+	<title>家計簿</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" th:href="@{/style.css}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+</head>
 	
-	<body>
-		<h1>家計簿</h1>
-			<button><a href="form/input.html" th:href="@{/form}">新規作成</a></button>
-			<button><a href="form/view.html" th:href="@{/view}">一覧表示</a></button>
-	</body>
+<body>
+	<h1>家計簿</h1>
+	<button><a href="form/input.html" th:href="@{/form}">新規作成</a></button>
+	<button><a href="form/view.html" th:href="@{/view}">一覧表示</a></button>
+</body>
 	
 </html>

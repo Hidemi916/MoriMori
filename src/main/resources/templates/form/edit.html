@@ -1,28 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Hello</title>
-<meta charset="utf-8" />
-<link rel="stylesheet" th:href="@{/style.css}">
+	<title>内容修正</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" th:href="@{/edit.css}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 	<h1 th:text="${title}"></h1>
 	<div th:object="${form}">
 		<form action="#" method="get" th:action="@{/edit/__*{id}__/exe}">
-			<p>
-				番号: <span th:text="*{id}"></span> <input type="hidden" name="id"
-					th:value="*{id}">
-			</p>
-			<p>
-				日付: <input type="date" name="date" th:value="*{date}">
-			</p>
-			<p>
-				内容: <input type="text" name="naiyou" th:value="*{naiyou}">
-			</p>
-			<p>
-				金額: <input type="text" name="yen" th:value="*{yen}">
-			</p>
-			<input type="submit" value="更新">
+			<p>日付: <input type="date" name="date" th:value="*{date}"></p>
+			<p>内容: <input type="text" name="naiyou" th:value="*{naiyou}" placeholder="（例）食事代"></p>
+			<p>金額: <input type="text" name="yen" th:value="*{yen}" placeholder="（例）2000"></p>
+			<input class="button" type="submit" value="戻る">
+			<input class="button" type="submit" value="更新">
 		</form>
 	</div>
 </body>
