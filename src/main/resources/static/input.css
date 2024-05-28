@@ -17,7 +17,7 @@
 
 
 body {
-	height: 960px;
+	height: 500px;
 	width: auto;
 	text-align: center;
 	margin: 100px auto;
@@ -29,6 +29,13 @@ h1 {
 	font-weight: 700;
 	font-style: normal;
 	font-size: 100px;
+	padding-bottom: 50px;
+}
+
+p {
+	font-family: "Zen Maru Gothic", serif;
+	font-weight: 500;
+	font-style: normal;
 }
 
 a {
@@ -40,3 +47,23 @@ a {
 	font-weight: 500;
 	font-style: normal;
 }
+
+.button {
+	background-color: #4CAF50;
+	padding: 10px 45px;
+	text-align: center;
+	display: inline-block;
+	margin: 30px 10px;
+	border : none;
+	border-radius: 30px;
+	font-size: 20px;
+}
+
+.button:hover {
+	background-color: #f9876f;
+}
+
+
+
+
+

@@ -3,14 +3,19 @@
 <head>
 	<title>Hello</title>
 	<meta charset="utf-8" />
+	<link rel="stylesheet" th:href="@{/confirm.css}">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 	<h1 th:text="${title}"></h1>
 		<form method="get" action="#" th:action="@{/confirm}">
 			<p>日付 : <input type="date" name="date"></p>
-			<p>内容 : <input type="text" name="naiyou"></p>
-			<p>金額 : <input type="text" name="yen"></p>
-			<input type="submit" value="入力内容の確認へ">
+			<p>内容 : <input type="text" name="naiyou" placeholder="（例）食事代"></p>
+			<p>金額 : <input type="text" name="yen" placeholder="（例）2000">円</p>
+			<input class="button" type="submit" value="入力内容の確認へ">
 		</form>
 </body>
 </html>
