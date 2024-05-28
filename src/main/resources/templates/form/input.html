@@ -14,8 +14,8 @@
 	<p th:text="${errortitle}"></p>
 		<form method="get" action="#" th:action="@{/confirm}">
 			<p>日付 : <input type="date" name="date"></p>
-			<p>内容 : <input type="text" name="naiyou" placeholder="（例）食事代"></p>
-			<p>金額 : <input type="text" name="yen" placeholder="（例）2000">円</p>
+			<p>メモ : <input type="text" name="naiyou" placeholder="（例）食事代"></p>
+			<p>支出金額 : <input type="text" name="yen" placeholder="（例）2000">円</p>
 			<input class="button" type="submit" value="入力内容の確認へ">
 		</form>
 </body>

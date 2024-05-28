@@ -31,19 +31,19 @@ public class FormController {
 	
 	@RequestMapping("/form")
 	public String form(Model model) {
-		model.addAttribute("title","新規作成ページ");
+		model.addAttribute("title","新規作成");
 		return "form/input";
 	}
 	
 	@RequestMapping("/confirm")
 	public String confirm(@Validated Form form, BindingResult result, Model model) {
 		if(result.hasErrors()) {
-			model.addAttribute("title","訂正ページ");
-			model.addAttribute("errortitle","正しく入力してください");
+			model.addAttribute("title","新規作成");
+			model.addAttribute("errortitle","登録内容を正しく入力してください");
 			return "form/input";
 			}
 
-		model.addAttribute("title","確認ページ");
+		model.addAttribute("title","新規作成");
 		return "form/confirm";
 	}
 	
@@ -71,7 +71,7 @@ public class FormController {
 	public String view(Model model) {
 		List<EntForm> list = sampledao.searchDb();
 		model.addAttribute("dbList",list);
-		model.addAttribute("title","家計簿の一覧ページ");
+		model.addAttribute("title","家計簿の一覧");
 		return "form/view";
 	}
 	
@@ -94,7 +94,7 @@ public class FormController {
 
 			//スタンバイしているViewに向かって、データを投げる
 			model.addAttribute("form", entformdb);
-			model.addAttribute("title", "編集ページ");
+			model.addAttribute("title", "登録内容の編集");
 			return "form/edit";
 		}
 		
@@ -126,8 +126,8 @@ public class FormController {
 		    
 //		    // バリデーションエラーがあるかチェック
 		    if (result.hasErrors()) {
-		        model.addAttribute("title", "訂正ページ");
-		        model.addAttribute("errortitle", "正しく入力してください");
+		        model.addAttribute("title", "登録内容の編集");
+		        model.addAttribute("errortitle", "登録内容を正しく入力してください");
 		        return "form/edit"; // エラーがあれば編集画面に戻る
 		    }
 		    
