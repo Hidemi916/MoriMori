@@ -82,7 +82,7 @@ public class FormController {
 			return "redirect:/view";
 		}
 	
-		//更新画面の表示(SELECT)
+		//更新画面の表示(SELECT)の
 		@RequestMapping("/edit/{id}")
 		public String editView(@PathVariable Long id, Model model) {
 
