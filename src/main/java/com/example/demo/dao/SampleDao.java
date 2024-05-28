@@ -94,7 +94,9 @@ public List<EntForm> searchDb(){
 			//コンソールに表示
 			System.out.println("編集の実行");
 			//UPDATEを実行
-			db.update("UPDATE sample SET date = ?, naiyou=?, yen=? WHERE id = ?",entform.getDate(),entform.getNaiyou(),entform.getYen(),id);
+			db.update("UPDATE sample SET date = ? WHERE id = ?",entform.getDate(),id);
+			db.update("UPDATE sample SET naiyou=? WHERE id = ?",entform.getNaiyou(),id);
+			db.update("UPDATE sample SET yen=? WHERE id = ?",entform.getYen(),id);
 		}
 		
 	}
