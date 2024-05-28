@@ -57,15 +57,17 @@ a {
 
 button {
 	background-color: #4CAF50;
-	padding: 5px 0px;
+	padding: 10px 0px;
 	text-align: center;
 	display: inline-block;
 	margin: 30px 10px;
 	border : none;
 	border-radius: 50px;
+	transition: .2s;
 }
 
 button:hover {
 	background-color: #f9876f;
+	transform: scale(1.1,1.1);
 }
 
