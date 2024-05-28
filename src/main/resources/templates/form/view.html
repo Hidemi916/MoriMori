@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>家計簿の一覧ページ</title>
-	<meta charset="utf-8" />
-	<link rel="stylesheet" th:href="@{/view.css}">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>家計簿の一覧ページ</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" th:href="@{/view.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <h1 th:text="${title}"></h1>
-   
-	<table>
+    <table>
         <tr>
             <th>No.</th>
             <th>日付</th>
@@ -22,35 +21,30 @@
             <th></th>
         </tr>
         <tr th:each="res, i : ${dbList}">
-            <td id="hyou" class="no" th:text="${i.index + 1}">1</td>
-            <td id="hyou" th:text="${res.date}">日付</td>
-            <td id="hyou" th:text="${res.naiyou}">内容</td>
-            <td id="hyou" class="yen" th:text="${res.yen}">金額</td>
+            <td class="no" th:text="${i.index + 1}">1</td>
+            <td th:text="${res.date}">日付</td>
+            <td th:text="${res.naiyou}">内容</td>
+            <td class="yen" th:text="${res.yen}">金額</td>
             <td>
                 <form th:action="@{/edit/{id}(id=${res.id})}">
                     <input type="submit" value="編集">
                 </form>
             </td>
-            <td>
-                <form th:action="@{/del/{id}(id=${res.id})}">
-					<input type="submit" value="削除">
-                </form>
-            </td>
-
 			<td>
 			    <form id="deleteForm" th:action="@{/del/{id}(id=${res.id})}" method="post">
 			        <input type="submit" value="削除" onclick="return confirm('本当に削除しますか？')" />
 			    </form>
 			</td>
-
         </tr>
+		<tr>
+			<td>
+			<p id="total"><!-- 合計金額を表示するための場所 --><p>
+			</td>
+		</tr>
     </table>
-
-	<p id="total"> 合計金額を表示するための場所 <p>
-
-	
-	<button><a href="/form" th:href="@{/form}">新規作成へ</a></button>
-
+	<p>
+        <button class="new"><a href="/form" th:href="@{/form}">新規作成へ</a></button>
+	</p>
     <script th:inline="javascript">
         // JavaScriptで合計金額を計算する
         var total = 0;
@@ -58,7 +52,7 @@
         for (var i = 0; i < yenCells.length; i++) {
             total += parseInt(yenCells[i].textContent); // セル内のテキストを取得して合計に追加する
         }
-        document.getElementById("total").textContent = "合計支出：" + total + "円";
+        document.getElementById("total").textContent = "合計金額: " + total;
     </script>
 </body>
 </html>
