@@ -31,7 +31,7 @@ public class FormController {
 	
 	@RequestMapping("/form")
 	public String form(Model model) {
-		model.addAttribute("title","新規作成ページ");
+		model.addAttribute("title","新規作成");
 		return "form/input";
 	}
 	
