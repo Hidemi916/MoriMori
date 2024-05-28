@@ -6,6 +6,7 @@
 </head>
 <body>
 	<h1 th:text="${title}"></h1>
+	<p th:text="${errortitle}"></p>
 		<form method="get" action="#" th:action="@{/confirm}">
 			<p>日付 : <input type="date" name="date"></p>
 			<p>内容 : <input type="text" name="naiyou"></p>
