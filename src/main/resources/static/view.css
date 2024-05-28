@@ -32,6 +32,14 @@ header {
 	margin-left: 10%;
 }
 
+header a {
+	text-decoration: none;
+	font-family: "Zen Maru Gothic", serif;
+	font-weight: 500;
+	font-style: normal;
+	color: #000;
+}
+
 #top {
 	background-color: rgb(128, 255, 255);
 	color: #000;

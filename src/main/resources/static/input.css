@@ -31,6 +31,14 @@ header {
 	margin-left: 10%;
 }
 
+header a {
+	text-decoration: none;
+	font-family: "Zen Maru Gothic", serif;
+	font-weight: 500;
+	font-style: normal;
+	color: #000;
+}
+
 #top {
 	background-color: rgb(128, 255, 255);
 	color: #000;
@@ -47,6 +55,11 @@ button {
 	border-radius: 30px;
 	font-size: 18px;
 	transition: .2s;
+}
+
+button:hover {
+	background-color: #f9876f;
+	transform: scale(1.1,1.1);
 }
 	
 h1 {
