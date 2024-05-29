@@ -73,6 +73,15 @@ p {
 	font-family: "Zen Maru Gothic", serif;
 	font-weight: 500;
 	font-style: normal;
+	font-size: 20px;
+}
+
+.bun {
+	color: rgb(69, 69, 69);
+}
+
+.content {
+	font-weight: bold;
 }
 
 .form {
