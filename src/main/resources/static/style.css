@@ -18,13 +18,18 @@
 /*  font-style: normal;*/
 /*}*/
 
+/*背景 #F7F4AC*/
+/*buttonメイン #FF8616*/
+/*buttonサブ #FF6A16*/
+/*top #9FE446*/
+/*topサブ #74BB2C*/
 
 body {
 	height: 500px;
 	width: auto;
 	text-align: center;
 	margin: 100px auto;
-	background-color: rgb(247, 244, 172);
+	background-color: #F7F4AC;
 	}
 
 h1 {
@@ -38,14 +43,14 @@ a {
 	text-decoration: none;
 	margin : 100px;
 	font-size: 25px;
-	color: #000;
+	color: #FFF;
 	font-family: "Zen Maru Gothic", serif;
 	font-weight: 500;
 	font-style: normal;
 }
 
 button {
-	background-color: #4CAF50;
+	background-color: #FF8616;
 	padding: 15px 10px;
 	text-align: center;
 	display: inline-block;
@@ -56,8 +61,8 @@ button {
 }
 
 button:hover {
-	background-color: #f9876f;
-	transform: scale(1.1,1.1);
+	background-color: #FF6A16;
+	transform: scale(0.9,0.9);
 }
 
 
