@@ -90,9 +90,23 @@ p {
 	color: rgb(69, 69, 69);
 }
 
-.content {
-	font-weight: bold;
+.divcontent {
+    display: flex;
+    flex-direction: column; /* 要素を縦に並べる */
+    align-items: flex-start; /* 左揃え */
+    justify-content: center; /* 中央に配置 */
+/*    border: 1px solid #000;*/
+    margin: 50px auto; /* 画面中央に配置 */
+    max-width: 200px; /* 適宜調整 */
+    padding-left: 30px;
 }
+
+.content {
+    font-weight: bold;
+    text-align: left; /* 左揃え */
+	margin: -10px 0; /* 各要素の上下のマージンを半分に */
+}
+
 
 .form {
 	display: inline-flex;

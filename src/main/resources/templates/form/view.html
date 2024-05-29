@@ -30,7 +30,7 @@
             <td id="hyou" class="no" th:text="${i.index + 1}">1</td>
             <td id="hyou" class="date" th:text="${res.date}">日付</td>
             <td id="hyou" class="naiyou" th:text="${res.naiyou}">メモ</td>
-            <td id="hyou" class="yen" th:text="${res.yen}">支出金額</td>
+            <td id="hyou" class="yen" th:text="${res.yen} + '円'">支出金額</td>
             <td>
                 <form th:action="@{/edit/{id}(id=${res.id})}">
                     <input type="submit" value="編集">
