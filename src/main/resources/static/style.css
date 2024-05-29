@@ -29,7 +29,10 @@ body {
 	width: auto;
 	text-align: center;
 	margin: 100px auto;
-	background-color: #F7F4AC;
+/*	background-color: #F7F4AC;*/
+background-image: url(img/haikei.jpg);
+background-repeat: no-repeat;
+background-size: cover;
 	}
 
 h1 {
@@ -54,7 +57,7 @@ button {
 	padding: 15px 10px;
 	text-align: center;
 	display: inline-block;
-	margin: 30px 20px;
+	margin: 100px 20px 30px 20px;
 	border : none;
 	border-radius: 50px;
 	transition: .1s;
