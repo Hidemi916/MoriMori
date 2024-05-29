@@ -17,11 +17,11 @@
 	<h1><span th:text="${title}"></span></h1>
 	
 	<div th:object="${form}">
-		<p>この内容で登録します。
-		<br>よろしいですか？</p>
-		<p th:text="'日付：' + *{date}"></p>
-		<p th:text="'メモ：' + *{naiyou}"></p>
-		<p th:text="'支出金額：' +*{yen}">円</p>
+		<p class="bun">この内容で登録します。
+		<br>よろしいですか？<br></p>
+		<p class="content" th:text="'日付： ' + *{date}"></p>
+		<p class="content" th:text="'メモ： ' + *{naiyou}"></p>
+		<p class="content" th:text="'支出金額： ' +*{yen}">円</p>
 
 		<div class="form">
 		<form method="get" action="#" th:action="@{/form}">

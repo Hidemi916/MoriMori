@@ -39,7 +39,6 @@ header a {
 	color: #000;
 }
 
-
 #top {
 	background-color: rgb(128, 255, 255);
 	color: #000;
@@ -75,6 +74,11 @@ p {
 	font-family: "Zen Maru Gothic", serif;
 	font-weight: 500;
 	font-style: normal;
+}
+
+.error {
+	font-size: 20px;
+	color: rgb(82, 82, 82);
 }
 
 input {
