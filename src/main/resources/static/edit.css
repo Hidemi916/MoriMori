@@ -64,12 +64,12 @@ button {
 	border : none;
 	border-radius: 30px;
 	font-size: 18px;
-	transition: .2s;
+	transition: .1s;
 }
 
 button:hover {
 	background-color: #FF6A16;
-	transform: scale(0.9,0.9);
+	transform: scale(0.96,0.96);
 }
 
 	
@@ -119,11 +119,11 @@ input {
 	border : none;
 	border-radius: 30px;
 	font-size: 18px;
-	transition: .2s;
+	transition: .1s;
 	color: #FFF;
 }
 
 .button:hover {
 	background-color: #FF6A16;
-	transform: scale(0.9,0.9);
+	transform: scale(0.96,0.96);
 }

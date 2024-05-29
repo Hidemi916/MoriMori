@@ -57,12 +57,12 @@ button {
 	margin: 30px 20px;
 	border : none;
 	border-radius: 50px;
-	transition: .2s;
+	transition: .1s;
 }
 
 button:hover {
 	background-color: #FF6A16;
-	transform: scale(0.9,0.9);
+	transform: scale(0.96,0.96);
 }
 
 
