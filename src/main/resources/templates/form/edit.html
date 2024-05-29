@@ -19,9 +19,9 @@
 	<div th:object="${form}">
 		
 		<form action="#" method="get" th:action="@{/edit/__*{id}__/exe}">
-			<p>日付: <input type="date" name="date" th:value="*{date}"></p>
-			<p>メモ: <input type="text" name="naiyou" th:value="*{naiyou}" placeholder="（例）食事代"></p>
-			<p>支出金額: <input type="text" name="yen" th:value="*{yen}" placeholder="（例）2000">円</p>
+			<p>日付: <input id="textbox" type="date" name="date" th:value="*{date}"></p>
+			<p>メモ: <input id="textbox" type="text" name="naiyou" th:value="*{naiyou}" placeholder="（例）食事代"></p>
+			<p>支出金額: <input id="textbox" type="text" name="yen" th:value="*{yen}" placeholder="（例）2000">円</p>
 			<input class="button" type="submit" value="更新">
 		</form>
 		

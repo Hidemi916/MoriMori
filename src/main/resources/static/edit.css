@@ -87,6 +87,18 @@ input {
 	font-style: normal;
 }
 
+#textbox {
+	padding: 0 1%;
+	border-radius: 5%;
+	margin: 10px 20px;
+}
+
+#textbox:focus {
+	border: 2px solid rgb(255, 128, 255);
+	z-index: 10;
+	outline: 0;
+}
+
 .button {
 	background-color: #4CAF50;
 	padding: 10px 45px;
