@@ -32,6 +32,15 @@ body {
 	background-color: #F7F4AC;
 	}
 	
+divinput {
+	display: flex;
+    flex-direction: column; /* 要素を縦に並べる */
+    align-items: flex-start; /* 左揃え */
+    justify-content: center; /* 中央に配置 */
+    margin: 50px auto; /* 画面中央に配置 */
+    max-width: 200px; /* 適宜調整 */
+}
+	
 header {
 	text-align: left;
 	margin-left: 10%;
@@ -93,9 +102,10 @@ input {
 }
 
 #textbox {
-	padding: 0 1%;
-	border-radius: 5%;
-	margin: 10px 20px;
+	padding: 2px 1%;
+	border-radius: 10px;
+	margin: 3px 5px;
+	text-align: left;
 }
 
 #textbox:focus {

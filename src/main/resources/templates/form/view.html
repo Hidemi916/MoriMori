@@ -18,7 +18,6 @@
    
     <table>
         <tr>
-
             <th>No.</th>
             <th class="pointer" id="date">日付　▼</th>
             <th class="pointer" id="naiyou">メモ　▼</th>
@@ -26,6 +25,7 @@
             <th></th>
             <th></th>
         </tr>
+		
         <tr th:each="res, i : ${dbList}">
             <td id="hyou" class="no" th:text="${i.index + 1}">1</td>
             <td id="hyou" class="date" th:text="${res.date}">日付</td>

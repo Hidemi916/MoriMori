@@ -17,9 +17,11 @@
 	<h1 th:text="${title}"></h1>
 	<p th:text="${errortitle}"></p>
 		<form method="get" action="#" th:action="@{/confirm}">
+			<div class="divinput">
 			<p>日付 :<input id="textbox" type="date" name="date"></p>
 			<p>メモ :<input id="textbox" type="text" name="naiyou" placeholder="（例）食事代"></p>
-			<p>支出金額 :<input id="textbox" type="text" name="yen" placeholder="（例）2000">円</p>
+			<p>支出 :<input id="textbox" type="text" name="yen" placeholder="（例）2000">円</p>
+			</div>
 			<input class="button" type="submit" value="入力内容の確認へ">
 		</form>
 </body>
