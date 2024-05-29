@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>家計簿の一覧ページ</title>
-	<meta charset="utf-8" />
-	<link rel="stylesheet" th:href="@{/view.css}">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>家計簿の一覧ページ</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" th:href="@{/view.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <header>
-	<button id="top"><a href="../index.html" th:href="@{/kakeibo}">TOP</a></button>
+    <button id="top"><a href="../index.html" th:href="@{/kakeibo}">TOP</a></button>
 </header>
 
 <body>
     <h1 th:text="${title}"></h1>
    
-	<table>
+    <table>
         <tr>
             <th>No.</th>
-            <th>日付</th>
-            <th>メモ</th>
-            <th>支出金額</th>
+            <th id="date">日付</th>
+            <th id="naiyou">メモ</th>
+            <th id="yen">支出金額</th>
             <th></th>
             <th></th>
         </tr>
         <tr th:each="res, i : ${dbList}">
             <td id="hyou" class="no" th:text="${i.index + 1}">1</td>
-            <td id="hyou" th:text="${res.date}">日付</td>
-            <td id="hyou" th:text="${res.naiyou}">メモ</td>
+            <td id="hyou" class="date" th:text="${res.date}">日付</td>
+            <td id="hyou" class="naiyou" th:text="${res.naiyou}">メモ</td>
             <td id="hyou" class="yen" th:text="${res.yen}">支出金額</td>
             <td>
                 <form th:action="@{/edit/{id}(id=${res.id})}">
                     <input type="submit" value="編集">
                 </form>
             </td>
-			<td>
-			    <form id="deleteForm" th:action="@{/del/{id}(id=${res.id})}" method="post">
-			        <input type="submit" value="削除" onclick="return confirm('本当に削除しますか？')" />
-			    </form>
-			</td>
-
+            <td>
+                <form id="deleteForm" th:action="@{/del/{id}(id=${res.id})}" method="post">
+                    <input type="submit" value="削除" onclick="return confirm('本当に削除しますか？')" />
+                </form>
+            </td>
         </tr>
     </table>
 
-	<p id="total"> 合計金額を表示するための場所 <p>
+    <p id="total"> 合計金額を表示するための場所 <p>
 
-	
-	<button><a href="/form" th:href="@{/form}">新規作成へ</a></button>
+    <button><a href="/form" th:href="@{/form}">新規作成へ</a></button>
 
     <script th:inline="javascript">
         // JavaScriptで合計金額を計算する
@@ -57,6 +55,43 @@
             total += parseInt(yenCells[i].textContent); // セル内のテキストを取得して合計に追加する
         }
         document.getElementById("total").textContent = "合計支出：" + total + "円";
+        
+
+		// 列の並べ替えに関する処理
+		var ascending = true; // 初期は昇順
+		function sortTable(className) {
+		    var rows = Array.from(document.querySelectorAll("tr")).slice(1); // 表の行を配列に変換して取得
+		    rows.sort((a, b) => {
+		        var aValue = a.querySelector("." + className).textContent.trim(); // クラス名に対応するセルのテキストを取得してトリム
+		        var bValue = b.querySelector("." + className).textContent.trim();
+		        return ascending ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue); // 昇順か降順かによって比較結果を変える
+		    });
+		    var tableBody = document.querySelector("table tbody");
+		    rows.forEach(row => {
+		        tableBody.appendChild(row); // 並べ替えた行を表に追加
+		    });
+		    ascending = !ascending; // クリックごとに昇順と降順を切り替える
+		}
+		
+		// 日付をクリックして昇順、降順に並べ替える
+		var dateHeader = document.getElementById("date");
+		dateHeader.addEventListener("click", function() {
+		    sortTable("date");
+		});
+		
+		// メモをクリックして昇順、降順に並べ替える
+		var naiyouHeader = document.getElementById("naiyou");
+		naiyouHeader.addEventListener("click", function() {
+		    sortTable("naiyou");
+		});
+		
+		// 支出金額をクリックして昇順、降順に並べ替える
+		var yenHeader = document.getElementById("yen");
+		yenHeader.addEventListener("click", function() {
+		    sortTable("yen");
+		});
+
     </script>
 </body>
 </html>
+
