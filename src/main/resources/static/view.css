@@ -75,10 +75,8 @@ table {
 }
 
 #hyou {
-	border-right: 1px solid #000;
-	border-bottom: 1px solid #000;
-	border-top: 1px solid #000;
-	padding: 10px 30px;
+	padding: 0px 30px;
+	background-color: #FFF;
 }
 
 input {
@@ -86,9 +84,9 @@ input {
 	padding: 8px 30px;
 	text-align: center;
 	display: inline-block;
-	margin: 10px 10px;
+/*	margin-left: 10px;*/
 	border : none;
-	border-radius: 30px;
+/*	border-radius: 30px;*/
 	font-size: 18px;
   	color: #FFF;
 	font-family: "Zen Maru Gothic", serif;
@@ -97,10 +95,6 @@ input {
 
 input:hover {
 	background-color: #FF6A16;
-}
-
-.no {
-	border-left: 1px solid #000;
 }
 
 p {
@@ -134,5 +128,6 @@ button {
 button:hover {
 	background-color: #FF6A16;
 	transform: scale(0.96,0.96);
+	cursor: pointer
 }
 
