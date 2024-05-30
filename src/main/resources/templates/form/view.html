@@ -59,19 +59,40 @@
         
 
 		// 列の並べ替えに関する処理
-		var ascending = true; // 初期は昇順
+		var sorting = {
+		    date: {
+		        ascending: true
+		    },
+		    naiyou: {
+		        ascending: true
+		    },
+		    yen: {
+		        ascending: true
+		    }
+		};
+		
 		function sortTable(className) {
 		    var rows = Array.from(document.querySelectorAll("tr")).slice(1); // 表の行を配列に変換して取得
 		    rows.sort((a, b) => {
-		        var aValue = a.querySelector("." + className).textContent.trim(); // クラス名に対応するセルのテキストを取得してトリム
-		        var bValue = b.querySelector("." + className).textContent.trim();
-		        return ascending ? aValue.localeCompare(bValue) : bValue.localeCompare(aValue); // 昇順か降順かによって比較結果を変える
+		        var aValue, bValue;
+		        if (className === 'date') {
+		            aValue = new Date(a.querySelector("." + className).textContent.trim()); // クラス名に対応するセルのテキストを日付オブジェクトとして取得
+		            bValue = new Date(b.querySelector("." + className).textContent.trim());
+		        } else {
+		            aValue = a.querySelector("." + className).textContent.trim(); // クラス名に対応するセルのテキストを取得してトリム
+		            bValue = b.querySelector("." + className).textContent.trim();
+		        }
+		        if (className === 'yen') {
+		            aValue = parseInt(aValue); // 金額の場合は数値として処理
+		            bValue = parseInt(bValue);
+		        }
+		        return sorting[className].ascending ? (aValue > bValue ? 1 : -1) : (aValue < bValue ? 1 : -1); // 昇順か降順かによって比較結果を変える
 		    });
 		    var tableBody = document.querySelector("table tbody");
 		    rows.forEach(row => {
 		        tableBody.appendChild(row); // 並べ替えた行を表に追加
 		    });
-		    ascending = !ascending; // クリックごとに昇順と降順を切り替える
+		    sorting[className].ascending = !sorting[className].ascending; // クリックごとに昇順と降順を切り替える
 		}
 		
 		// 日付をクリックして昇順、降順に並べ替える
